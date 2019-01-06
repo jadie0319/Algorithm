@@ -24,15 +24,10 @@ public class Main {
 
     System.out.println(find(s));
 
-
-
-
   }
 
   public static int find(String s) {
     StringBuffer sb = new StringBuffer(s);
-
-
     int result = Integer.MAX_VALUE;
 
     if(!isPalindrome(sb)) {
