@@ -63,8 +63,11 @@ public class Solution2 {
       System.out.println("큐 들오아자마자  begin : " + begin + "  queue.peek() : " + queue.peek() + "   answer : " + answer);
       if(checkCountingAlphabet(target,queue.peek()) == 0) {
         System.out.println("성공.  begin : " + begin + "  queue.peek() : " + queue.peek() + "   answer : " + answer);
+        answer++;
         return answer;
-      }else if(checkCountingAlphabet(begin,queue.peek()) == 1) {
+      }
+
+      if(checkCountingAlphabet(begin,queue.peek()) == 1) {
         System.out.println("차이가 1 일때.  begin : " + begin + "  queue.peek() : " + queue.peek() + "   answer : " + answer);
         begin = queue.poll();
         answer++;
