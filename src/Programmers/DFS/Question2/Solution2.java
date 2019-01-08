@@ -58,12 +58,16 @@ public class Solution2 {
 
     int count = 0;
     int queueSize = queue.size();
+
+    if(target.equals(queue.peek())) {
+      return 1;
+    }
+
     while(!queue.isEmpty()) {
       count++;
-      System.out.println("큐 들오아자마자  begin : " + begin + "  queue.peek() : " + queue.peek() + "   answer : " + answer);
+      System.out.println("큐 들어오자마자  begin : " + begin + "  queue.peek() : " + queue.peek() + "   answer : " + answer);
       if(checkCountingAlphabet(target,queue.peek()) == 0) {
         System.out.println("성공.  begin : " + begin + "  queue.peek() : " + queue.peek() + "   answer : " + answer);
-        answer++;
         return answer;
       }
 
@@ -84,6 +88,15 @@ public class Solution2 {
     //return solutioning(begin,target,queue,answer);
     return 0;
   }
+
+
+  public static int solutioning(String begin, String target, Queue<String> queue, int answer) {
+
+
+
+    return 0;
+  }
+
 
 
   public static int checkCountingAlphabet(String word, String queueWord) {
