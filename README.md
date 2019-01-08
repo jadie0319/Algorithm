@@ -11,6 +11,10 @@
  - 깊이,너비 우선 탐색, 단어변환 - DFS/BFS  <br>
  Link : https://programmers.co.kr/learn/courses/30/lessons/43163
 
+ ## BOJ
+ - 1389번, 깊이,너비 우선 탐색, 케빈베이컨의 6단계 법칙 - BFS <br>
+ Link : https://www.acmicpc.net/problem/1389
+
 
 
 <br>
