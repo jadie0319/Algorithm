@@ -54,19 +54,10 @@ public class Solution {
     int answer = 0;
 
     Queue<Node> queue = new LinkedList<>();
-    //List<Node> lists = new ArrayList<>();
 
     for(String word : words) {
       ((LinkedList<Node>) queue).add(new Node(word,false));
-      //lists.add(new Node(word,false));
     }
-
-    // queue 에 있는 모든 단어들이. target 과 차이가 1이하인 것이 하나도 없으면.
-    // 결과는 0 리턴!
-
-    // words 를 큐에 넣지 말고...? 정답 큐를 하나 만들어서?
-    // 매번
-
 
     int wordsSize = words.length;
     Queue<Node> answerQueue = new LinkedList<>();
@@ -81,10 +72,6 @@ public class Solution {
       return 0;
     }
 
-
-
-
-
     // 첫 번째 경우만 먼저. 계산해준다.
     for(int i=0; i < wordsSize ; i++) {
       int gap = checkCountingAlphabet(begin,words[i]);
@@ -96,72 +83,59 @@ public class Solution {
     }
 
     if(answerQueue.isEmpty()) {
-      System.out.println("첫 번째 테스트에서 끝!.정답후보가 없다!");
+      //System.out.println("첫 번째 테스트에서 끝!.정답후보가 없다!");
       return 0;
     }
 
     answer=1;
 
+    // root 가  hit / hot / dot,lot / dog,lot,dot,log / 이렇게 같은 단계?level?depth?에 있어야한다.
+    // 그래서 임의로 *을 넣어주어 큐의 peek() 가 *일때만 answer++ 해준다.
+    answerQueue.add(new Node("*",false));
 
     while(!answerQueue.isEmpty()) {
+      if(answerQueue.peek().getWord().equals("*")) {
+        //System.out.println("*** answer up");
+        answer++;
+        answerQueue.poll();
+        continue;
+      }
       Node root = answerQueue.poll();
-      System.out.println("root.getWord() : " + root.getWord());
+      //System.out.println("root.getWord() : " + root.getWord());
       root.setVisited(true);
 
       if(root.getWord().equals(target)) {
-        System.out.println("root == target!! 끝");
+        //System.out.println("root == target!! 끝");
         return answer;
       }
 
       for(Node node : queue) {
-        System.out.println("node : " + node.getWord() +"");
+        //System.out.println("node : " + node.getWord() +"");
         if(node.isVisited() == true) {
-          System.out.println("node가 " + node.getWord() +"임. continue");
+          //System.out.println("node가 " + node.getWord() +"임. continue");
           node.setVisited(true);
           continue;
         }
 
         int gap = checkCountingAlphabet(node.getWord(),root.getWord());
         if(gap == 1 && node.getWord().equals(target)) {
-          System.out.println("정답!");
+          //System.out.println("정답!");
           answer++;
           return answer;
         }else if(gap == 1) {
-          System.out.println(node.getWord() + " answerQueue에 add.");
+          //System.out.println(node.getWord() + " answerQueue에 add.");
           ((LinkedList<Node>) answerQueue).add(node);
         }
 
       }
-      answer++; // answer 가 여기있으면 모든 root 별로 카운트 되기 때문에 안된다. 다른게 필요.
-      System.out.println(answer);
-      System.out.println();
-      System.out.println();
-      // false 인 것들의 리스트를 가져와서
-      // node 와 비교하고. 차이가 1인것들은 answerQueue 에 넣고
-      // 차이가 0이면 answer+1 해서 리턴해버리고!
+      answerQueue.add(new Node("*",false));
+      //answer++; // answer 가 여기있으면 모든 root 별로 카운트 되기 때문에 안된다. 다른게 필요.
+      //System.out.println(answer);
+      //System.out.println();
+      //System.out.println();
   }
-
-
-
-
     return 0;
   }
-
-
-  public static List<String> falseList(Queue<Node> queue) {
-
-    int size = queue.size();
-    List<String> falseList = new ArrayList<>();
-
-    for(Node node : queue) {
-      if(!node.isVisited()) {
-        falseList.add(node.getWord());
-      }
-    }
-    return falseList;
-  }
-
-
 
   public static int checkCountingAlphabet(String word, String queueWord) {
     char[] chars = word.toCharArray();
