@@ -1,5 +1,7 @@
 package Programmers.Hashing.Question3;
 
+import java.util.Hashtable;
+
 /**
  * @author choijaeyong on 13/01/2019.
  * @project Algorithm
@@ -53,20 +55,24 @@ public class Solution {
     String[][] clothes = { {"yellow_hat","headgear"},
         {"blue_sunglasses","eyewear"},{"green_turban","headgear"} };
 
+    solution(clothes);
+  }
+
+
+  public static int solution(String[][] clothes) {
+    int answer = 0;
+
     for(String[] cloth : clothes) {
       System.out.println(cloth[0] + " , " + cloth[1]);
     }
 
+    Hashtable table = new Hashtable();
 
-  }
+    for(String[] cloth : clothes) {
+      table.put(cloth[0],cloth[1]);
+    }
 
-
-  public int solution(String[][] clothes) {
-    int answer = 0;
-
-    
-
-
+    System.out.println(table.size());
 
 
     return answer;
