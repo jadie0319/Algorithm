@@ -1,6 +1,7 @@
 package Programmers.Hashing.Question1;
 
 import java.util.Arrays;
+import java.util.Hashtable;
 
 /**
  * @author choijaeyong on 11/01/2019.
@@ -25,56 +26,57 @@ import java.util.Arrays;
 public class Solution {
 
   public static void main(String[] args) {
-    String[] participant = {"leo","kiki","eden"};
-    String[] completion = {"eden","kiki"};
+    //String[] participant = {"leo","kiki","eden"};
+    String[] participant = {"mislav", "stanko", "mislav", "ana"};
+    //String[] completion = {"eden","kiki"};
+    String[] completion = {"stanko", "ana", "mislav"};
 
-    Arrays.sort(participant);
+    //Arrays.sort(participant);
 
-    for(String user : participant) {
-      System.out.println(user);
-    }
+//    for(String user : participant) {
+//      System.out.println(user);
+//    }
 
     // compareTo : 0 이 1보다 배열의 앞에 위치했기에 음수가 나온다.
     System.out.println(participant[0].compareTo(participant[1]));
 
+    String answer = solution(participant,completion);
+    System.out.println(answer);
+
 
 
 
   }
 
 
-  public static String solution(String[] participant, String[] completion) {
+  public static String solution(String[] participants, String[] completions) {
     String answer = "";
-    int completionNums = completion.length;
+
+    Hashtable<String,Integer> table = new Hashtable();
+
+    for(String participant : participants) {
+      if(table.containsKey(participant)) {
+        table.put(participant, (table.get(participant)+1));
+      }else{
+        table.put(participant,1);
+      }
+
+    }
 
 
+    for(String completion : completions) {
+      table.put(completion, (table.get(completion)-1));
+    }
 
-
-    
-
+    for(String participant : participants) {
+      if(table.get(participant) == 1) {
+        answer = participant;
+        break;
+      }
+    }
 
     return answer;
   }
 
-//  public static boolean completeMarathon(String[] participant, String completion) {
-//    int size = participant.length;
-//    int left = 0;
-//    int right = size - 1;
-//    int mid;
-//    while(right >= left) {
-//      mid = (right + left) / 2;
-//      if(participant[mid].equals(completion)) {
-//        System.out.println(completion + "완주했다!");
-//        return true;
-//      }
-//      // completion 이 mid 의 앞에 있으면?
-//      if(participant[mid].compareTo(completion) > 0) {
-//        right = mid -1;
-//      } else {
-//        left = mid + 1;
-//      }
-//    }
-//    return false;
-//  }
 
 }
