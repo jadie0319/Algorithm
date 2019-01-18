@@ -1,6 +1,7 @@
 package Programmers.Hashing.Question3;
 
 import java.util.Hashtable;
+import java.util.Set;
 
 /**
  * @author choijaeyong on 13/01/2019.
@@ -62,6 +63,7 @@ public class Solution {
   public static int solution(String[][] clothes) {
     int answer = 0;
 
+
     for(String[] cloth : clothes) {
       System.out.println(cloth[0] + " , " + cloth[1]);
     }
@@ -78,4 +80,28 @@ public class Solution {
     return answer;
   }
 
+}
+class ClothSet {
+  Set<Cloth[]> cloths;
+}
+
+class Cloth {
+  private String name;
+  private String kind;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getKind() {
+    return kind;
+  }
+
+  public void setKind(String kind) {
+    this.kind = kind;
+  }
 }
