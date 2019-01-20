@@ -1,6 +1,10 @@
 # Algorithm
  Algorihtm - TopCoder, CodingInterview, Backjoon Online Judge
 
+ ## CodingInterview
+ - p136, 1-1. 중복이 없는가?
+ - Link :  
+
 
  ## TopCoder
  - p112, The Palindrome - 전체 탐색(문자열을 사용한 문제) <br>
