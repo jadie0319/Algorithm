@@ -3,8 +3,12 @@
 
  ## CodingInterview
  - p136, 1-1. 중복이 없는가?
- - Link :  
+ - Link : https://github.com/koola97620/Algorithm/blob/master/src/CodingInterview/Chapter01/Question1/Main.java
 
+ - p136, 1-2. 순열확인
+ - Link : 
+
+<br>
 
  ## TopCoder
  - p112, The Palindrome - 전체 탐색(문자열을 사용한 문제) <br>
@@ -40,7 +44,7 @@
 
  ## etc
  - 기준좌표에서 가장 가까운 점들 순으로 정렬하는 문제.
- Link :
+ Link : https://github.com/koola97620/Algorithm/blob/master/src/etc/etc1.java
 
 
 
