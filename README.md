@@ -2,17 +2,8 @@
  Algorihtm - TopCoder, CodingInterview, Backjoon Online Judge
 
  ## CodingInterview
- - p136, 1-1. 중복이 없는가?
- - Link : https://github.com/koola97620/Algorithm/blob/master/src/CodingInterview/Chapter01/Question1/Main.java
 
- - p136, 1-2. 순열확인
- - Link :
-
- - p136, 1-3. URL화
- - Link :
-
- - p136, 1-3. 회문 순열
- - Link :
+  - https://github.com/koola97620/Algorithm/tree/master/src/CodingInterview
 
 <br>
 
