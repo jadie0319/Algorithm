@@ -1,4 +1,4 @@
 ## Programmers
 
 - DFS
-- Hash
+- Hashing
