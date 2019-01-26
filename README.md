@@ -9,7 +9,10 @@
  - Link :
 
  - p136, 1-3. URL화
- - Link :  
+ - Link :
+
+ - p136, 1-3. 회문 순열
+ - Link :
 
 <br>
 
