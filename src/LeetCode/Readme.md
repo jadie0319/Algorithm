@@ -11,3 +11,6 @@
 
  - 240, Search a 2D Matrix II , BS <br>
  Link : https://leetcode.com/problems/search-a-2d-matrix-ii/
+
+ - 771, Jewels and Stones <br>
+ Link : https://leetcode.com/problems/jewels-and-stones/
