@@ -14,3 +14,6 @@
 
  - 771, Jewels and Stones <br>
  Link : https://leetcode.com/problems/jewels-and-stones/
+
+ - 905 : Sort Array By Parity <br>
+ Link : https://leetcode.com/problems/sort-array-by-parity/
