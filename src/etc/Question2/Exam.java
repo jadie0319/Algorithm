@@ -1,7 +1,9 @@
 package etc.Question2;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author choijaeyong on 13/02/2019.
@@ -16,6 +18,16 @@ public class Exam {
     Exam e = new Exam();
 
     System.out.println(e.solution(A));
+
+    // List 테스트.
+    List<Integer> list = new ArrayList<>();
+    list.add(1);
+    list.add(3);
+    list.add(5);
+    System.out.println(list.get(0));
+    list.remove(0);
+    System.out.println(list.get(0));
+
 
   }
 
