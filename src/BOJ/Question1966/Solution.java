@@ -46,7 +46,7 @@ public class Solution {
       //nums[i] = sc.nextInt();
       queue.add(new Document(sc.nextInt(),0));
     }
-    //int result = ((LinkedList<Document>) queue).get(position).getNum();
+    //int result = ((LinkedListNode<Document>) queue).get(position).getNum();
     Document result = ((LinkedList<Document>) queue).get(position);
     ((LinkedList<Document>) queue).get(position).setValue(1);
     // value 가 1로 표기.
@@ -60,7 +60,7 @@ public class Solution {
         printCount++;
       } else {
         // 미출력.
-        //((LinkedList<Integer>) queue).addLast(((LinkedList<Integer>) queue).removeFirst());
+        //((LinkedListNode<Integer>) queue).addLast(((LinkedListNode<Integer>) queue).removeFirst());
         ((LinkedList<Document>) queue).addLast(((LinkedList<Document>) queue).removeFirst());
 
       }
