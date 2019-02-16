@@ -31,7 +31,8 @@ public class Solution {
 
     System.out.println(node1.printForward());
 
-    deleteDuplicate(node1);
+    //deleteDuplicate(node1);
+    deleteDuplicateWithoutBuffer(node1);
 
     System.out.println(node1.printForward());
 
@@ -67,6 +68,24 @@ public class Solution {
       }
       node1 = node1.next;
     }
+
+  }
+
+  // Runner 포인터 를 사용한다!
+  public static void deleteDuplicateWithoutBuffer(LinkedListNode<Character> head) {
+    LinkedListNode<Character> current = head;
+    while(current != null) {
+      LinkedListNode<Character> runner = current;
+      while(runner.next != null) {
+        if(current.data == runner.next.data) {
+          runner.next = runner.next.next;
+        }else {
+          runner = runner.next;
+        }
+      }
+      current = current.next;
+    }
+
 
   }
 
