@@ -21,7 +21,7 @@ public class SetMapExam {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 
-    int[] soldires = {3,4,3,100,2,2,3,0,0};
+    int[] soldires = {3,4,3,0,2,2,3,0,0};
 
     System.out.println(solution(soldires));
 
@@ -71,6 +71,9 @@ public class SetMapExam {
       map.put(rank, map.get(rank) == null ? 1 : map.get(rank) +1);
       set.add(rank);
     }
+
+    System.out.println(map);
+    System.out.println(set);
 
     Iterator<Integer> itr = set.iterator();
 

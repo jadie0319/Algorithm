@@ -18,40 +18,42 @@ public class MapExam {
 
   public static int solution(int[] A) {
     // write your code in Java SE 8
-      int length = A.length;
+    int length = A.length;
 
-      if(length == 0) {
-        return 0;
-      }
+    if(length == 0) {
+      return 0;
+    }
 
-      Map<Integer,Integer> map = new HashMap<>();
+    Map<Integer,Integer> map = new HashMap<>();
 
-      int max=0;
-      for(int i=0; i < length ; i++) {
-        map.put(i,A[i]);
-      }
+    int max=0;
+    for(int i=0; i < length ; i++) {
+      map.put(i,A[i]);
+    }
 
-      boolean[] flags = new boolean[length];
+    System.out.println(map);
 
-      for(int i=0; i < length ; i++) {
-        if(flags[i] == false) {
-          int num = map.get(i);
-          int cnt = 0;
+    boolean[] flags = new boolean[length];
 
-          if(num == i) {
-            flags[i] = true;
-            cnt = 1;
-          }
+    for(int i=0; i < length ; i++) {
+      if(flags[i] == false) {
+        int num = map.get(i);
+        int cnt = 0;
 
-          while(flags[num] == false) {
-            flags[num] = true;
-            num = map.get(num);
-            cnt++;
-          }
-          max = max > cnt ? max : cnt;
-
+        if(num == i) {
+          flags[i] = true;
+          cnt = 1;
         }
+
+        while(flags[num] == false) {
+          flags[num] = true;
+          num = map.get(num);
+          cnt++;
+        }
+        max = max > cnt ? max : cnt;
+
       }
+    }
 
     return max;
   }
