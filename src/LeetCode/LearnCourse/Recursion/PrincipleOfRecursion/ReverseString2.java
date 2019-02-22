@@ -1,4 +1,4 @@
-package LeetCode.LearnCourse.Recursion;
+package LeetCode.LearnCourse.Recursion.PrincipleOfRecursion;
 
 /**
  * @author choijaeyong on 16/02/2019.

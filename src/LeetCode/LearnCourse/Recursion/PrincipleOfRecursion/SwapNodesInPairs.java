@@ -1,8 +1,4 @@
-package LeetCode.LearnCourse.Recursion;
-
-import CodingInterview.Library.LinkedListNode;
-import java.util.LinkedList;
-import java.util.List;
+package LeetCode.LearnCourse.Recursion.PrincipleOfRecursion;
 
 /**
  * @author choijaeyong on 16/02/2019.
