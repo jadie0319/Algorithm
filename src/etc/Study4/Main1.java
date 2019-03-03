@@ -1,20 +1,20 @@
 package etc.Study4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author choijaeyong on 02/03/2019.
+ * @author choijaeyong on 03/03/2019.
  * @project Algorithm
  * @description
  */
-public class Solution1 {
+public class Main1 {
   public static void main(String[] args) {
-    int[] inputs = {3,4,5,4};
-    int[] inputs1 = {4,5,2,3,4};
-    int[] inputs2 = {1,2,3,3,5,6,7};
+    int[] A = {3,4,5,4};
 
-    System.out.println(solution(inputs2));
+    System.out.println(solution(A));
+
   }
 
   public static int solution(int[] A) {
@@ -22,24 +22,30 @@ public class Solution1 {
     Integer[] temp = null;
     int length = A.length;
 
-    int result =0;
+    int result = 0;
 
     for(int i=0; i < length ; i++) {
-
+      System.out.println("A : " + Arrays.toString(A));
+      // 새 배열을 만든다. i 번째 나무가 빠진.
       temp = newArray(A,i);
+      System.out.println("temp : " + Arrays.toString(temp) );
 
+      // i 번째 나무가 빠진 새 배열이 크기순으로 잘 정렬 되었는지 비교해본다.
       if(isOrdered(temp)) {
+        // 정렬이 잘 되어있으면 결과값에 ++
         result++;
       }
 
     }
+
     return result;
   }
 
-  // new array except cut tree
   public static Integer[] newArray(int[] A, int k) {
+
     Integer[] temp = null;
     List<Integer> list = new ArrayList<>();
+
     int length = A.length;
 
     for(int i=0; i < length ; i++) {
@@ -48,19 +54,17 @@ public class Solution1 {
       }
       list.add(A[i]);
     }
-
     temp = list.toArray(new Integer[list.size()]);
+    System.out.println();
 
     return temp;
   }
 
   public static boolean isOrdered(Integer[] A) {
-
     int length = A.length;
 
-    for(int i=0; i < length - 1 ; i++) {
+    for(int i=0; i < length-1 ; i++) {
       if(A[i] > A[i+1]) {
-        // if A[i] tree is bigger than A[i+1] tree, return false
         return false;
       }
     }
