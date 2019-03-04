@@ -9,9 +9,9 @@ import java.util.Arrays;
  */
 public class Main2 {
   public static void main(String[] args) {
-    int U = 2;
-    int L = 3;
-    int[] C = {0,0,1,2,2};
+    int U = 3;
+    int L = 2;
+    int[] C = {2,1,1,0,1};
 
     System.out.println(solution(U,L,C));
   }
@@ -26,7 +26,7 @@ public class Main2 {
       if(C[i] == 2) {
         arr[0][i] = 1;
         U--;
-        arr[1][i] = 1;
+        arr[1][i] = 1;  // 정답제출할때 여기 2라고 써서 틀렸음. 조심해야함.
         L--;
         C[i] = 0;
       }
@@ -44,7 +44,7 @@ public class Main2 {
     for(int i=0; i < length ; i++) {
       if(arr[0][i] != 1) {
         if(U <= 0 || C[i] <= 0) {
-          break;
+          continue;    // 정답 제출할 때 여기 break 라고 한거 같은데. 틀ㄹ린거임. continue로!
         }
         arr[0][i] = 1;
         U--;
