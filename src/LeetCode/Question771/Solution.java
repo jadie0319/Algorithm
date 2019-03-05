@@ -1,7 +1,7 @@
 package LeetCode.Question771;
 
 /**
- * @author choijaeyong on 11/03/2019.
+ * @author choijaeyong on 02/02/2019.
  * @project Algorithm
  * @description
  */
