@@ -1,5 +1,8 @@
 package etc.Study4;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author choijaeyong on 04/03/2019.
  * @project Algorithm
@@ -17,8 +20,6 @@ public class Main4 {
 
     Main4 main = new Main4();
     System.out.println(main.solution(inputs));
-
-
 
   }
 
