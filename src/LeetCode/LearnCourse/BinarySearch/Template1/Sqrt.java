@@ -4,6 +4,7 @@ package LeetCode.LearnCourse.BinarySearch.Template1;
  * @author choijaeyong on 15/03/2019.
  * @project Algorithm
  * @description
+ * https://leetcode.com/explore/learn/card/binary-search/125/template-i/950/
  */
 public class Sqrt {
   public static void main(String[] args) {
