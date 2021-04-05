@@ -17,10 +17,23 @@ public class Main {
   }
 
   public static int solution(int[] A, int[] B) {
+    int number = A.length;
+    int maxCount = 0;
+
+    for(int i=0; i < number ; i++) {
+      int length = B[i] - A[i];
+      int end = A[i] + length;
+      int count = 0;
+      for (int j=1; j < number ; j++ ) {
+        if (A[j] > end ) {
+          count++;
+        }
+      }
+      maxCount = Math.max(maxCount,count);
+    }
 
 
-
-    return 0;
+    return maxCount;
   }
 
 }
