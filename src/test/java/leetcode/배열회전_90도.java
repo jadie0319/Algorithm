@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
   LeetCode 48번
  */
 
-public class 배열회전 {
+public class 배열회전_90도 {
 
   @Test
   void test() {
