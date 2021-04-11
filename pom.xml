@@ -13,7 +13,13 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.0-M1</version>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.19.0</version>
+        </dependency>
     </dependencies>
+
 
 
 </project>
