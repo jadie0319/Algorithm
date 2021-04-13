@@ -1,10 +1,6 @@
 package CodingInterview.Chapter02.Question01;
 
 import CodingInterview.Library.LinkedListNode;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import java.util.LinkedList;
-import java.util.List;
-import sun.awt.image.ImageWatched.Link;
 
 /**
  * @author choijaeyong on 15/02/2019.
