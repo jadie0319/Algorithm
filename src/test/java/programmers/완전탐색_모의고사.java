@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.OptionalInt;
 import org.junit.jupiter.api.Test;
 
 public class 완전탐색_모의고사 {
