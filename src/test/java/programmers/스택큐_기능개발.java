@@ -31,24 +31,23 @@ public class 스택큐_기능개발 {
             queue.add(task);
         }
 
-
-        // 7,3,9
+        // remainWorkDays 7,3,9
         int criteria = 0;
         if (!queue.isEmpty()) {
-            criteria = queue.peek().remainWorkload;
+            criteria = queue.peek().remainWorkDays;
         }
         List<Integer> answerList = new ArrayList<>();
         int result = 0;
 
         while (!queue.isEmpty()) {
             Task task = queue.peek();
-            if (task.getRemainWorkload() <= criteria) {
+            if (task.getRemainWorkDays() <= criteria) {
                 result++;
                 queue.poll();
             } else {
                 answerList.add(result);
                 result = 0;
-                criteria = task.getRemainWorkload();
+                criteria = task.getRemainWorkDays();
             }
         }
         answerList.add(result);
@@ -57,23 +56,19 @@ public class 스택큐_기능개발 {
     }
 
     public static class Task {
-        private int progress;
-        private int speed;
-        private int remainWorkload;
+        private int remainWorkDays;
 
         public Task(int progress, int speed) {
-            this.progress = progress;
-            this.speed = speed;
-            remainWorkload = calculateRemain(progress, speed);
+            remainWorkDays = calculateRemainWorkDays(progress, speed);
         }
 
-        public int getRemainWorkload() {
-            return remainWorkload;
+        public int getRemainWorkDays() {
+            return remainWorkDays;
         }
 
-        private int calculateRemain(int progress, int speed) {
-            int remain = 100 - progress;
-            if (remain % speed == 0) {
+        private int calculateRemainWorkDays(int progress, int speed) {
+            int remainWorkload = 100 - progress;
+            if (remainWorkload % speed == 0) {
                 return (100 - progress) / speed;
             } else {
                 return ((100 - progress) / speed) + 1;
