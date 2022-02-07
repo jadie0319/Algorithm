@@ -19,14 +19,8 @@ public class 위장 {
 
     public int solution(String[][] clothes) {
         Hashtable<String,Integer> table = new Hashtable<String,Integer>();
+        createClothMap(clothes, table);
 
-        for(int i=0; i < clothes.length ; i++) {
-            if(table.containsKey(clothes[i][1])) {
-                table.replace(clothes[i][1], table.get(clothes[i][1]) + 1);
-            } else {
-                table.put(clothes[i][1], 1);
-            }
-        }
         int answer = 1;
         Collection<Integer> values = table.values();
         for (Integer value : values) {
@@ -35,5 +29,15 @@ public class 위장 {
         // 아무것도 안입은경우
         answer = answer -1;
         return answer;
+    }
+
+    private void createClothMap(String[][] clothes, Hashtable<String, Integer> table) {
+        for(int i = 0; i < clothes.length ; i++) {
+            if(table.containsKey(clothes[i][1])) {
+                table.replace(clothes[i][1], table.get(clothes[i][1]) + 1);
+            } else {
+                table.put(clothes[i][1], 1);
+            }
+        }
     }
 }

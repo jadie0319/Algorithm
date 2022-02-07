@@ -36,6 +36,10 @@ public class 베스트앨범 {
                 })
                 .collect(Collectors.toList());
 
+        return createMusicList(orderedMusics);
+    }
+
+    private int[] createMusicList(List<Musics> orderedMusics) {
         List<Integer> answerList = new ArrayList<>();
         for(Musics musics : orderedMusics) {
             List<Integer> answerIndex = musics.getAnswerMusics();
