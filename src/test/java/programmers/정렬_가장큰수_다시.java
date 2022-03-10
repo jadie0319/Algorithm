@@ -3,6 +3,9 @@ package programmers;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,36 +14,56 @@ public class 정렬_가장큰수_다시 {
     @Test
     void case1() {
         int[] numbers = {6, 10, 2};
-        String solution = solution(numbers);
+        String solution = solution2(numbers);
         assertThat(solution).isEqualTo("6210");
     }
 
     @Test
     void case2() {
         int[] numbers = {3, 30, 34, 5, 9};
-        String solution = solution(numbers);
+        String solution = solution2(numbers);
         assertThat(solution).isEqualTo("9534330");
     }
 
     @Test
     void case3() {
         int[] numbers = {6, 10, 2, 0};
-        String solution = solution(numbers);
+        String solution = solution2(numbers);
         assertThat(solution).isEqualTo("62100");
     }
 
     @Test
     void case4() {
         int[] numbers = {0, 0, 0};
-        String solution = solution(numbers);
+        String solution = solution2(numbers);
         assertThat(solution).isEqualTo("0");
     }
 
     @Test
     void case5() {
         int[] numbers = {0, 0, 0, 70};
-        String solution = solution(numbers);
+        String solution = solution2(numbers);
         assertThat(solution).isEqualTo("70000");
+    }
+
+    public String solution(int[] numbers) {
+        List<Integer> numberList = Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors.toList());
+
+        numberList.sort((num1,num2) -> {
+            String numStr1 = String.valueOf(num1);
+            String numStr2 = String.valueOf(num2);
+            return Integer.compare(Integer.parseInt(numStr2+numStr1), Integer.parseInt(numStr1+numStr2));
+        });
+
+        if (numberList.get(0) == 0) {
+            return "0";
+        }
+
+        return numberList.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining());
     }
 
 
@@ -48,7 +71,7 @@ public class 정렬_가장큰수_다시 {
     private static StringBuilder SB = new StringBuilder();
     private static String MAXSTR = "0";
 
-    public String solution(int[] numbers) {
+    public String solution2(int[] numbers) {
         MAXSTR = "0";
         permutation(numbers, 0, numbers.length);
         if (Character.getNumericValue(MAXSTR.charAt(0)) == 0) {
