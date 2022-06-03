@@ -1,4 +1,4 @@
-package dongbinna.part02;
+package dongbinna.part02.chapter03;
 
 import org.junit.jupiter.api.Test;
 
